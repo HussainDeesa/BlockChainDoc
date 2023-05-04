@@ -1,0 +1,101 @@
+{% extends "Home.html" %} {% block content %}
+<h2 class="heading">{{operation}} Role</h2>
+<form
+  id="frm"
+  name="frm"
+  method="post"
+  action="/ProcessRoleOperation"
+  enctype="multipart/form-data"
+>
+  <input type="hidden" name="operation" value="{{ operation }}" />
+  <input type="hidden" name="roleID" value="{{ row.roleID }}" />
+
+  <div class="form-group row">
+    <label for="roleName" class="col-sm-3 col-form-label">Role name </label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" name="roleName" id="roleName"
+      value="{{ row.roleName }}" required {{'readonly' if operation ==
+      'Delete'}} />
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="canRole" class="col-sm-3 col-form-label">Can role </label>
+    <div class="col-sm-9">
+      <input type="checkbox" name="canRole" id="canRole" {{ 'checked' if
+      row.canRole == 1 }} {{'disabled' if operation == 'Delete'}} />
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="canUsers" class="col-sm-3 col-form-label">Can users </label>
+    <div class="col-sm-9">
+      <input type="checkbox" name="canUsers" id="canUsers" {{ 'checked' if
+      row.canUsers == 1 }} {{'disabled' if operation == 'Delete'}} />
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="canApprovedBy" class="col-sm-3 col-form-label"
+      >Can approved by
+    </label>
+    <div class="col-sm-9">
+      <input type="checkbox" name="canApprovedBy" id="canApprovedBy" {{
+      'checked' if row.canApprovedBy == 1 }} {{'disabled' if operation ==
+      'Delete'}} />
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="canDocumentHolder" class="col-sm-3 col-form-label"
+      >Can document holder
+    </label>
+    <div class="col-sm-9">
+      <input type="checkbox" name="canDocumentHolder" id="canDocumentHolder" {{
+      'checked' if row.canDocumentHolder == 1 }} {{'disabled' if operation ==
+      'Delete'}} />
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="canUploadedBy" class="col-sm-3 col-form-label"
+      >Can uploaded by
+    </label>
+    <div class="col-sm-9">
+      <input type="checkbox" name="canUploadedBy" id="canUploadedBy" {{
+      'checked' if row.canUploadedBy == 1 }} {{'disabled' if operation ==
+      'Delete'}} />
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="canedit" class="col-sm-3 col-form-label"
+      >Can edit 
+    </label>
+    <div class="col-sm-9">
+      <input type="checkbox" name="canedit" id="canedit" {{
+      'checked' if row.canedit == 1 }} {{'disabled' if operation ==
+      'Delete'}} />
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="candelete" class="col-sm-3 col-form-label"
+      >Can delete
+    </label>
+    <div class="col-sm-9">
+      <input type="checkbox" name="candelete" id="candelete" {{
+      'checked' if row.candelete == 1 }} {{'disabled' if operation ==
+      'Delete'}} />
+    </div>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" class="btn btn-outline-primary btn-sm">
+      {{operation}}
+    </button>
+    <a href="/RoleListing" class="btn btn-outline-primary btn-sm">Cancel</a>
+  </div>
+</form>
+
+{% endblock %}

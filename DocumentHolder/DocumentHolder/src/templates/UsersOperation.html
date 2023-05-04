@@ -1,0 +1,66 @@
+
+    {% extends "Home.html" %}
+
+{% block content %}
+    <h2 class="heading">{{operation}}  Users</h2>
+    <form id="frm" name="frm" method="post" action="/ProcessUsersOperation" enctype="multipart/form-data">
+               
+      
+         <input type="hidden" name="operation" value="{{ operation }}"/>
+         <input type="hidden" name="userID" value="{{ row.userID }}"/>
+
+        
+
+                                            <div class="form-group row">
+                                    <label for="userName" class="col-sm-3 col-form-label">Username </label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="userName" id="userName"  value="{{ row.userName }}" required {{'readonly' if operation == 'Delete'}} />
+                                    </div>
+                                </div>
+                                            
+                                            <div class="form-group row">
+                                    <label for="emailid" class="col-sm-3 col-form-label">Emailid </label>
+                                    <div class="col-sm-9">
+                                        <input type="email" class="form-control" name="emailid" id="emailid"  value="{{ row.emailid }}" required {{'readonly' if operation == 'Delete'}} />
+                                    </div>
+                                </div>
+                                            
+                                            <div class="form-group row">
+                                    <label for="password" class="col-sm-3 col-form-label">Password </label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="password" id="password"  value="{{ row.password }}" required {{'readonly' if operation == 'Delete'}} />
+                                    </div>
+                                </div>
+                                            
+                                            <div class="form-group row">
+                                    <label for="contactNo" class="col-sm-3 col-form-label">Contactno </label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="contactNo" id="contactNo"  value="{{ row.contactNo }}" required {{'readonly' if operation == 'Delete'}} />
+                                    </div>
+                                </div>
+                                            
+                                            <div class="form-group row">
+    <label for="isActive" class="col-sm-3 col-form-label">Isactive </label>
+    <div class="col-sm-9">
+        <input type="checkbox"  name="isActive" id="isActive"  {{ 'checked' if row.isActive == 1 }} {{'disabled' if operation == 'Delete'}} />
+    </div>
+</div>
+                                            
+            <div class="form-group row">
+    <label for="roleID" class="col-sm-3 col-form-label">Roleid  </label>
+    <div class="col-sm-9">
+        <input type="number" step="1" class="form-control" name="roleID" id="roleID"  value="{{ row.roleID }}" required {{'readonly' if operation == 'Delete'}} />
+    </div>
+</div>
+            
+    
+		
+        <div class="text-center">
+                <button type="submit" class="btn btn-outline-primary btn-sm ">{{operation}}</button>
+                <a href="/UsersListing" class="btn btn-outline-primary btn-sm ">Cancel</a>
+        </div>
+
+    </form>
+    
+{% endblock %}
+    

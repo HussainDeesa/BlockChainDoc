@@ -1,0 +1,127 @@
+{
+  "contractName": "RoleContract",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "perform_transactions",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.10+commit.fc410830\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"perform_transactions\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/RoleContract.sol\":\"RoleContract\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/RoleContract.sol\":{\"keccak256\":\"0x90a5999a93cb54f574e7484ea927c7d5177fffaf153caf99d4bf9c18d8d98a95\",\"urls\":[\"bzz-raw://fc4e7000aad07526815472a78076c88d1a702c4b961d71f66460cac2e35f06f2\",\"dweb:/ipfs/Qmb6T14G49x9eWZhGZYRg86eN8dA4zrSqfeMd168e6G5w8\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50606d80601d6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063ff0c51ba14602d575b600080fd5b60336035565b005b56fea264697066735822122001b10fe107393c597acaa5269d1a08a364e0a663e4baf158eeb8fa9b092c357b64736f6c634300080a0033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063ff0c51ba14602d575b600080fd5b60336035565b005b56fea264697066735822122001b10fe107393c597acaa5269d1a08a364e0a663e4baf158eeb8fa9b092c357b64736f6c634300080a0033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "38:109:3:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "38:109:3:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;79:55;;;:::i;:::-;;;:::o",
+  "source": "pragma solidity >=0.4.22 <0.9.0;\r\n    contract RoleContract {\r\n    \r\n    \r\n    function perform_transactions() public{\r\n       \r\n    }\r\n        \r\n}\r\n",
+  "sourcePath": "D:\\MYPROJECT\\DocumentHolder-Truffle\\contracts\\RoleContract.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/RoleContract.sol",
+    "exportedSymbols": {
+      "RoleContract": [
+        109
+      ]
+    },
+    "id": 110,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 104,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:3"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "RoleContract",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 109,
+        "linearizedBaseContracts": [
+          109
+        ],
+        "name": "RoleContract",
+        "nameLocation": "47:12:3",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 107,
+              "nodeType": "Block",
+              "src": "117:17:3",
+              "statements": []
+            },
+            "functionSelector": "ff0c51ba",
+            "id": 108,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "perform_transactions",
+            "nameLocation": "88:20:3",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 105,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "108:2:3"
+            },
+            "returnParameters": {
+              "id": 106,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "117:0:3"
+            },
+            "scope": 109,
+            "src": "79:55:3",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 110,
+        "src": "38:109:3",
+        "usedErrors": []
+      }
+    ],
+    "src": "0:149:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.10+commit.fc410830.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x371Ce6eFc3dEbbB16Acc48Fe1cA66dff823A1E59",
+      "transactionHash": "0x427f7ca830c836e5eb366aad42117de45cdad0ca2dbfcd6b53654ccadc109b34"
+    }
+  },
+  "schemaVersion": "3.4.13",
+  "updatedAt": "2023-05-04T14:01:12.491Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

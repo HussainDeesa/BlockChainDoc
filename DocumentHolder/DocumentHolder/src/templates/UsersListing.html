@@ -1,0 +1,45 @@
+
+    
+{% extends "Home.html" %}
+
+{% block content %}
+    <h2 class="heading"> Users Listing</h2>
+    
+<div class="text-center m-2"><a href="/UsersOperation?operation=Create" class="btn btn-outline-primary btn-sm ">Create</a></div>
+    <table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th scope="col">User Name</th>
+
+      <th scope="col">Action</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+        {% if records | length == 0 %}
+            <tr>
+                <td colspan="2">
+                    <div class="alert alert-info" style="display:block" >
+                        <div class="text-center"> <b>No&nbsp;</b><span>Users Found</span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        {% endif %}
+    {% for row in records %}
+        <tr>
+            <td>{{ row.userName }}</td>
+
+        <td>
+            <a href="/UsersOperation?operation=Edit&unique_id={{ row.userID }}" class="btn btn-outline-warning btn-sm ">Edit</a>
+            <a href="/UsersOperation?operation=Delete&unique_id={{ row.userID }}" class="btn btn-outline-warning btn-sm ">Delete</a>
+        </td>
+        </tr>
+    {% endfor %}
+   </tbody>
+</table>
+<div class="text-center m-2"><a href="/UsersOperation?operation=Create" class="btn btn-outline-primary btn-sm ">Create</a></div>
+{% endblock %}
+    
+    
+    

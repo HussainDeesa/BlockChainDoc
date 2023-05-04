@@ -1,0 +1,94 @@
+
+    {% extends "Home.html" %}
+
+{% block content %}
+    <h2 class="heading">{{operation}}  Document Holder</h2>
+    <form id="frm" name="frm" method="post" action="/ProcessDocumentHolderOperation" enctype="multipart/form-data">
+               
+      
+         <input type="hidden" name="operation" value="{{ operation }}"/>
+         <input type="hidden" name="documentHolderID" value="{{ row.documentHolderID }}"/>
+
+        
+
+                                            <div class="form-group row">
+                                    <label for="documentHolderName" class="col-sm-3 col-form-label">Document holder name </label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="documentHolderName" id="documentHolderName"  value="{{ row.documentHolderName }}" required {{'readonly' if operation == 'Delete'}} />
+                                    </div>
+                                </div>
+                                            
+                                            <div class="form-group row">
+                                    <label for="documentName" class="col-sm-3 col-form-label">Document name </label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="documentName" id="documentName"  value="{{ row.documentName }}" required {{'readonly' if operation == 'Delete'}} />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="documentInformation" class="col-sm-3 col-form-label">document  Information </label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="documentInformation" id="documentInformation"
+                                            value="{{ row.documentInformation }}" required {{'readonly' if operation=='Delete' }} />
+                                    </div>
+                                </div>    
+                            <div class="form-group row">
+                                <label for="documentFile" class="col-sm-3 col-form-label">Document file </label>
+                                <div class="col-sm-5">
+                                    <input type="file" class="form-control" name="documentFile" id="documentFile"  value="{{ row.documentFile }}" {{'required' if operation == 'Create'}} {{'readonly' if operation == 'Delete'}} />
+                                    
+                                </div>
+                                <div class="col-sm-4 {{'d-none' if not operation == 'Edit' }}" >
+                                    <input type="hidden" name="hdocumentFile" value="{{ row.documentFile }}" />
+                                   
+                                </div>
+                            </div>
+                                                    
+            <div class="form-group row">
+                <label for="approvedByID" class="col-sm-3 col-form-label">Approved by id </label>
+                <div class="col-sm-9">
+                    <select class="form-control" id="approvedByID" name="approvedByID" {{'disabled' if operation == 'Delete'}}>
+                        {% for dd_row in approvedBy_list %}
+                            <option value="{{dd_row.approvedByID}}">{{dd_row.approvedByName}}</option>
+                
+                        {% endfor %}
+                    </select>                          
+                </div>
+            </div>
+            
+            <div class="form-group row">
+                <label for="uploadedByID" class="col-sm-3 col-form-label">Uploaded by id </label>
+                <div class="col-sm-9">
+                    <select class="form-control" id="uploadedByID" name="uploadedByID" {{'disabled' if operation == 'Delete'}}>
+                        {% for dd_row in uploadedBy_list %}
+                            <option value="{{dd_row.uploadedByID}}">{{dd_row.uploadedByName}}</option>
+                
+                        {% endfor %}
+                    </select>                          
+                </div>
+            </div>
+            
+                                            <div class="form-group row">
+                                    <label for="createdDate" class="col-sm-3 col-form-label">Created date  </label>
+                                    <div class="col-sm-9">
+                                        <input type="datetime-local" class="form-control" name="createdDate" id="createdDate"  value="{{ row.createdDate }}" required {{ 'readonly' if operation == 'Delete' }} />
+                                    </div>
+                                </div>
+                                            
+                                                <div class="form-group row">
+                                        <label for="expireDate" class="col-sm-3 col-form-label">Expire date  </label>
+                                        <div class="col-sm-9">
+                                            <input type="date" class="form-control" name="expireDate" id="expireDate"  value="{{ row.expireDate }}" required {{ 'readonly' if operation == 'Delete' }} />
+                                        </div>
+                                    </div>
+                                                
+    
+		
+        <div class="text-center">
+                <button type="submit" class="btn btn-outline-primary btn-sm ">{{operation}}</button>
+                <a href="/DocumentHolderListing" class="btn btn-outline-primary btn-sm ">Cancel</a>
+        </div>
+
+    </form>
+    
+{% endblock %}
+    

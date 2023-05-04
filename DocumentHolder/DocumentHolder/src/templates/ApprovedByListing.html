@@ -1,0 +1,47 @@
+
+    
+{% extends "Home.html" %}
+
+{% block content %}
+    <h2 class="heading"> Approved By Listing</h2>
+    
+<div class="text-center m-2"><a href="/ApprovedByOperation?operation=Create" class="btn btn-outline-primary btn-sm ">Create</a></div>
+    <table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Approved By ID</th>
+<th scope="col">Approved By Name</th>
+
+      <th scope="col">Action</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+        {% if records | length == 0 %}
+            <tr>
+                <td colspan="3">
+                    <div class="alert alert-info" style="display:block" >
+                        <div class="text-center"> <b>No&nbsp;</b><span>Approved By Found</span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        {% endif %}
+    {% for row in records %}
+        <tr>
+            <td>{{ row.approvedByID }}</td>
+<td>{{ row.approvedByName }}</td>
+
+        <td>
+            <a href="/ApprovedByOperation?operation=Edit&unique_id={{ row.approvedByID }}" class="btn btn-outline-warning btn-sm ">Edit</a>
+            <a href="/ApprovedByOperation?operation=Delete&unique_id={{ row.approvedByID }}" class="btn btn-outline-warning btn-sm ">Delete</a>
+        </td>
+        </tr>
+    {% endfor %}
+   </tbody>
+</table>
+<div class="text-center m-2"><a href="/ApprovedByOperation?operation=Create" class="btn btn-outline-primary btn-sm ">Create</a></div>
+{% endblock %}
+    
+    
+    

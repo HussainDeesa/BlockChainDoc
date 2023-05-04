@@ -1,0 +1,18 @@
+
+        {% extends "Home.html" %}
+
+{% block content %}
+    <div id="div1">
+	{% if msgType == 'Error' %}
+		<h2 class="alert alert-danger text-center">{{message}}</h2>
+     {% endif %}
+	{% if msgType == 'Success' %}
+		<h2 class="alert alert-success text-center">{{message}}</h2>
+     {% endif %}
+	{% if msgType == 'info' %}
+		<h2 class="alert alert-info text-center">{{message}}</h2>
+     {% endif %}   	 
+    </div>
+
+{% endblock %}
+                

@@ -1,0 +1,54 @@
+
+    
+{% extends "Home.html" %}
+
+{% block content %}
+
+    <h2 class="heading"> Document Holder Listing</h2>
+    
+<div class="text-center m-2"><a href="/DocumentHolderOperation?operation=Create" class="btn btn-outline-primary btn-sm ">Create</a></div>
+    <table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Document Holder ID</th>
+<th scope="col">Document Holder Name</th>
+
+      <th scope="col">Action</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+        {% if records | length == 0 %}
+            <tr>
+                <td colspan="3">
+                    <div class="alert alert-info" style="display:block" >
+                        <div class="text-center"> <b>No&nbsp;</b><span>Document Holder Found</span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        {% endif %}
+    {% for row in records %}
+        <tr>
+            <td>{{ row.documentHolderID }}</td>
+<td>{{ row.documentHolderName }}</td>
+
+        <td>
+            {% if role_object.canedit != False %}
+            <a href="/DocumentHolderOperation?operation=Edit&unique_id={{ row.documentHolderID }}" class="btn btn-outline-warning btn-sm ">Edit</a>
+            {%endif%}
+            {% if role_object.candelete != False %}
+           <a href="/DocumentHolderOperation?operation=Delete&unique_id={{ row.documentHolderID }}" class="btn btn-outline-danger btn-sm ">Delete</a>
+           {%endif%}
+           <!-- <a href="/DocumentHolderOperation?operation=Edit&unique_id={{ row.documentHolderID }}" class="btn btn-outline-success btn-sm ">View</a> -->
+           <a target="_blank" href="static\UPLOADED_FILES/{{ row.documentFile }}"  class="btn btn-outline-success btn-sm ">View</a>
+        </td>
+        </tr>
+    {% endfor %}
+   </tbody>
+</table>
+<div class="text-center m-2"><a href="/DocumentHolderOperation?operation=Create" class="btn btn-outline-primary btn-sm ">Create</a></div>
+{% endblock %}
+    
+    
+    
