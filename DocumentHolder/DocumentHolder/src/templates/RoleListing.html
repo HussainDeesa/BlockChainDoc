@@ -9,7 +9,9 @@
     <table class="table table-bordered table-striped">
   <thead>
     <tr>
+      <th scope="col">Role ID</th>
       <th scope="col">Role Name</th>
+      <th scope="col">Can View</th>
 <th scope="col">Can Role</th>
 <th scope="col">Can User</th>
 <th scope="col">Can Edit</th>
@@ -33,7 +35,9 @@
         {% endif %}
     {% for row in records %}
         <tr>
+            <td>{{ row.roleID }}</td>
             <td>{{ row.roleName }}</td>
+            <td>{{ row.canDocumentHolder }}</td>
 <td>{{ row.canRole }}</td>
 <td>{{ row.canUsers }}</td>
 <td>{{ row.canedit }}</td>

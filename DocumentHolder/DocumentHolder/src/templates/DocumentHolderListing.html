@@ -34,14 +34,15 @@
 <td>{{ row.documentHolderName }}</td>
 
         <td>
+             
+           <a target="_blank" href="static\UPLOADED_FILES/{{ row.documentFile }}"  class="btn btn-outline-success btn-sm ">View</a>
             {% if role_object.canedit != False %}
             <a href="/DocumentHolderOperation?operation=Edit&unique_id={{ row.documentHolderID }}" class="btn btn-outline-warning btn-sm ">Edit</a>
             {%endif%}
-            {% if role_object.candelete != False %}
+         
+           {% if role_object.candelete != False %}
            <a href="/DocumentHolderOperation?operation=Delete&unique_id={{ row.documentHolderID }}" class="btn btn-outline-danger btn-sm ">Delete</a>
            {%endif%}
-           <!-- <a href="/DocumentHolderOperation?operation=Edit&unique_id={{ row.documentHolderID }}" class="btn btn-outline-success btn-sm ">View</a> -->
-           <a target="_blank" href="static\UPLOADED_FILES/{{ row.documentFile }}"  class="btn btn-outline-success btn-sm ">View</a>
         </td>
         </tr>
     {% endfor %}
